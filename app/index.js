@@ -1,13 +1,16 @@
 // Source code to interact with smart contract
 
 // web3 provider with fallback for old version
-window.addEventListener('load', async () => {
-    // New web3 provider
+//window.addEventListener('load', async () => {
+    window.addEventListener('load',  async() => { //sincronico
+
+// New web3 provider
     if (window.ethereum) {
         window.web3 = new Web3(ethereum);
         try {
             // ask user for permission
-            await ethereum.enable();
+          //  await ethereum.enable();
+          await ethereum.enable();//sin await
             // user approved permission
         } catch (error) {
             // user rejected permission
@@ -27,9 +30,9 @@ window.addEventListener('load', async () => {
   console.log (window.web3.currentProvider)
   
   // contractAddress and abi are setted after contract deploy
-  var contractAddress = '0xd9145CCE52D386f254917e481eB44e9943F39138';
-  var abi = JSON.parse( '[{"constant":true,"inputs":[],"name":"getInfo","outputs":[{"name":"","type":"string"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":false,"inputs":[{"name":"_info","type":"string"}],"name":"setInfo","outputs":[],"payable":false,"stateMutability":"nonpayable","type":"function"}]' );
-  
+  var contractAddress = '0x1C9699966adeCAd348bb4eD4F83f080Bc6369BAA';
+  //var abi = JSON.parse( '[{"constant":true,"inputs":[],"name":"getInfo","outputs":[{"name":"","type":"string"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":false,"inputs":[{"name":"_info","type":"string"}],"name":"setInfo","outputs":[],"payable":false,"stateMutability":"nonpayable","type":"function"}]' );
+  var abi =JSON.parse('[{"inputs":[],"name":"getInfo","outputs":[{"internalType":"string","name":"","type":"string"}],"stateMutability":"view","type":"function"},{"inputs":[{"internalType":"string","name":"_info","type":"string"}],"name":"setInfo","outputs":[],"stateMutability":"nonpayable","type":"function"}]')
   //contract instance
   contract = new web3.eth.Contract(abi, contractAddress);
   
