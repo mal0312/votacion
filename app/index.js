@@ -30,6 +30,7 @@
   console.log (window.web3.currentProvider)
   
   // contractAddress and abi are setted after contract deploy
+  //desde 0x9B93AC8C3a7e824957479E625515e85b052ccf26
   var contractAddress = '0x1C9699966adeCAd348bb4eD4F83f080Bc6369BAA';
   //var abi = JSON.parse( '[{"constant":true,"inputs":[],"name":"getInfo","outputs":[{"name":"","type":"string"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":false,"inputs":[{"name":"_info","type":"string"}],"name":"setInfo","outputs":[],"payable":false,"stateMutability":"nonpayable","type":"function"}]' );
   var abi =JSON.parse('[{"inputs":[],"name":"getInfo","outputs":[{"internalType":"string","name":"","type":"string"}],"stateMutability":"view","type":"function"},{"inputs":[{"internalType":"string","name":"_info","type":"string"}],"name":"setInfo","outputs":[],"stateMutability":"nonpayable","type":"function"}]')
