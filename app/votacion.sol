@@ -46,7 +46,7 @@ modifier soloPropietario(){
 
 function autorizar(address _persona)public soloPropietario 
 {
-    votantes[_persona].autorizado=true;
+   votantes[_persona].autorizado=true;
 
 }
  
@@ -65,4 +65,5 @@ function autorizar(address _persona)public soloPropietario
      selfdestruct(payable(propietarioSC));
 
  }
+
 }
